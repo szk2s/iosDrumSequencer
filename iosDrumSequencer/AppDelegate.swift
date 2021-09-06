@@ -6,12 +6,27 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        #if os(iOS)
+        do {
+            Settings.bufferLength = .short
+            try AVAudioSession.sharedInstance().setPreferredIOBufferDuration(Settings.bufferLength.duration)
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord,
+                                                            options: [.defaultToSpeaker, .mixWithOthers, .allowBluetoothA2DP])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let err {
+            print(err)
+        }
+        #endif
+
         return true
     }
 
