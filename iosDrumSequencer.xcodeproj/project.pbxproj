@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		74564F7226E626FB00F5EFF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74564F7026E626FB00F5EFF2 /* LaunchScreen.storyboard */; };
 		74564F7D26E626FB00F5EFF2 /* iosDrumSequencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74564F7C26E626FB00F5EFF2 /* iosDrumSequencerTests.swift */; };
 		74564F8826E626FB00F5EFF2 /* iosDrumSequencerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74564F8726E626FB00F5EFF2 /* iosDrumSequencerUITests.swift */; };
+		74564F9726E62B6300F5EFF2 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 74564F9626E62B6300F5EFF2 /* AudioKit */; };
+		74564F9A26E62E9800F5EFF2 /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 74564F9926E62E9800F5EFF2 /* 4tracks.mid */; };
+		74564F9C26E62EFA00F5EFF2 /* Samples in Resources */ = {isa = PBXBuildFile; fileRef = 74564F9B26E62EFA00F5EFF2 /* Samples */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,8 @@
 		74564F8326E626FB00F5EFF2 /* iosDrumSequencerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosDrumSequencerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74564F8726E626FB00F5EFF2 /* iosDrumSequencerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosDrumSequencerUITests.swift; sourceTree = "<group>"; };
 		74564F8926E626FB00F5EFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74564F9926E62E9800F5EFF2 /* 4tracks.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = 4tracks.mid; sourceTree = "<group>"; };
+		74564F9B26E62EFA00F5EFF2 /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Samples; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74564F9726E62B6300F5EFF2 /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +105,9 @@
 		74564F6426E626FA00F5EFF2 /* iosDrumSequencer */ = {
 			isa = PBXGroup;
 			children = (
+				74564F9B26E62EFA00F5EFF2 /* Samples */,
 				74564F6526E626FA00F5EFF2 /* AppDelegate.swift */,
+				74564F9826E62E7E00F5EFF2 /* Resources */,
 				74564F6726E626FA00F5EFF2 /* SceneDelegate.swift */,
 				74564F6926E626FA00F5EFF2 /* ContentView.swift */,
 				74564F6B26E626FB00F5EFF2 /* Assets.xcassets */,
@@ -136,6 +144,14 @@
 			path = iosDrumSequencerUITests;
 			sourceTree = "<group>";
 		};
+		74564F9826E62E7E00F5EFF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74564F9926E62E9800F5EFF2 /* 4tracks.mid */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +168,9 @@
 			dependencies = (
 			);
 			name = iosDrumSequencer;
+			packageProductDependencies = (
+				74564F9626E62B6300F5EFF2 /* AudioKit */,
+			);
 			productName = iosDrumSequencer;
 			productReference = 74564F6226E626FA00F5EFF2 /* iosDrumSequencer.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +242,9 @@
 				Base,
 			);
 			mainGroup = 74564F5926E626FA00F5EFF2;
+			packageReferences = (
+				74564F9526E62B6300F5EFF2 /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = 74564F6326E626FA00F5EFF2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,9 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74564F9C26E62EFA00F5EFF2 /* Samples in Resources */,
 				74564F7226E626FB00F5EFF2 /* LaunchScreen.storyboard in Resources */,
 				74564F6F26E626FB00F5EFF2 /* Preview Assets.xcassets in Resources */,
 				74564F6C26E626FB00F5EFF2 /* Assets.xcassets in Resources */,
+				74564F9A26E62E9800F5EFF2 /* 4tracks.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74564F9526E62B6300F5EFF2 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74564F9626E62B6300F5EFF2 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74564F9526E62B6300F5EFF2 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74564F5A26E626FA00F5EFF2 /* Project object */;
 }
